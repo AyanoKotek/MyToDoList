@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
+
   def index
     @tasks = Task.where(user: current_user)
   end
@@ -30,7 +31,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-
+    @task.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private
