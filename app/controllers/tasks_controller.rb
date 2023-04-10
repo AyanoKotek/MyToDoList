@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user: current_user)
+    @important_tasks = @task.where(important: true)
   end
 
   def new

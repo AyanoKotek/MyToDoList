@@ -6,3 +6,9 @@
   <%# the link has to be url, not path %>
   <%= link_to "Delete", "tasks/#{task.id}", data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"} %>
 <% end %>
+
+<h2>Important tasks</h2>
+<% @important_tasks.each do |task| %>
+  task
+<% end %>
+<%= link_to "New", new_task_path %>
