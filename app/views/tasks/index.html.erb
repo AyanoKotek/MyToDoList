@@ -9,6 +9,7 @@
 
 <h2>Important tasks</h2>
 <% @important_tasks.each do |task| %>
-  task
+  <p><%= task.title %></p>
+  <p><%= task.description %></p>
 <% end %>
-<%= link_to "New", new_task_path %>
+<%= link_to "Add task", new_task_path %>

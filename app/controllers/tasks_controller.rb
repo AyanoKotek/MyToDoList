@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user: current_user)
-    @important_tasks = @task.where(important: true)
+    @important_tasks = Task.where(important: true)
   end
 
   def new
@@ -43,6 +43,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description)
+    params.require(:task).permit(:title, :description, :important)
   end
 end
