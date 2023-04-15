@@ -1,6 +1,30 @@
-<h1>All the tasks</h1>
-<% @tasks.each do |task| %>
-  <h2><%= task.title %></h2>
-  <p><%= task.description %></p>
-  <%= link_to "Edit this task", edit_task_path(task) %>
-<% end %>
+<div class="container">
+  <div class="row d-flex justify-content-end">
+    <%= link_to "Add task", new_task_path, class:"btn btn-success btn-size"%>
+  </div>
+  <div class="row text-center">
+    <div class="col-4">
+      <div class="list-title-card">
+        <h2>All the tasks</h2>
+      </div>
+      <% @tasks.each do |task| %>
+        <h3><%= task.title %></h3>
+        <p><%= task.description %></p>
+        <%= link_to "Edit", edit_task_path(task) %>
+        <%# the link has to be url, not path %>
+        <%= link_to "Delete", "tasks/#{task.id}", data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <div class="list-title-card">
+        <h2>Important tasks</h2>
+      </div>
+      <% @important_tasks.each do |task| %>
+        <h3><%= task.title %></h3>
+        <p><%= task.description %></p>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

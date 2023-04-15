@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
+
   def index
     @tasks = Task.where(user: current_user)
+    @important_tasks = Task.where(important: true)
   end
 
   def new
@@ -30,7 +32,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-
+    @task.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private
@@ -40,6 +43,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description)
+    params.require(:task).permit(:title, :description, :important)
   end
 end
