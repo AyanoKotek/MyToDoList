@@ -1,1 +1,8 @@
 // Specific CSS for your home-page
+.list-title-card {
+  width: 100%;
+  height: 100px;
+  background-color: $blue;
+  display: grid;
+  place-items: center;
+}
