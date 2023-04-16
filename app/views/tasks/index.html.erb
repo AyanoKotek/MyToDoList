@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row d-flex justify-content-end">
+    <h1>My Tasks</h1>
     <%= link_to "Add task", new_task_path, class:"btn btn-success btn-size"%>
   </div>
   <div class="row text-center">
@@ -8,11 +9,13 @@
         <h2>All the tasks</h2>
       </div>
       <% @tasks.each do |task| %>
-        <h3><%= task.title %></h3>
-        <p><%= task.description %></p>
-        <%= link_to "Edit", edit_task_path(task) %>
-        <%# the link has to be url, not path %>
-        <%= link_to "Delete", "tasks/#{task.id}", data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"} %>
+        <div class="task-card">
+          <h3><%= task.title %></h3>
+          <p><%= task.description %></p>
+          <%= link_to "Edit", edit_task_path(task) %>
+          <%# the link has to be url, not path %>
+          <%= link_to "Delete", "tasks/#{task.id}", data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"} %>
+        </div>
       <% end %>
     </div>
     <div class="col-4">
