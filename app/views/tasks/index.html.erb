@@ -8,12 +8,19 @@
         <h2>All the tasks</h2>
       </div>
       <% @tasks.each do |task| %>
-        <div class="task-card d-flex justify-content-between">
+        <div class="task-card d-flex justify-content-between px-2">
+          <i class="fa-regular fa-square checkbox"></i>
+          <%# icon for checked is below %>
+          <%# <i class="fa-regular fa-square-check"></i> %>
           <div class="task-card-info flex-grow-1">
             <h3 class="list-title-font"><%= task.title %></h3>
             <p class="task-description"><%= task.description %></p>
           </div>
-          <div class="dots"><i class="fa-solid fa-ellipsis-vertical"></i>
+          <div class="date-dots d-flex flex-column align-items-center">
+            <small class="flex-grow-1"><%= task.created_at.strftime("%b %y") %></small>
+            <div class="dots">
+              <i class="fa-solid fa-ellipsis-vertical flex-grow-1"></i>
+            </div>
           </div>
         </div>
       <% end %>
