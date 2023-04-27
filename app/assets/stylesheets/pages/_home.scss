@@ -5,4 +5,38 @@
   background-color: $blue;
   display: grid;
   place-items: center;
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+  }
+}
+.list-title-font {
+  // font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif;
+}
+
+.task-card {
+  margin: .6rem auto;
+  border-bottom: 1px solid #BBB;
+  padding-bottom: 0.3rem;
+  .task-card-info {
+    margin-left: 1rem;
+  }
+  .list-title {
+    font-size: 1.5rem;
+  }
+  .task-description {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+  }
+  .dots {
+  width: 15%;
+  }
+}
+.page-title {
+  margin: 0.5rem;
+}
+
+.bkg-beige {
+  background-color: antiquewhite;
 }
