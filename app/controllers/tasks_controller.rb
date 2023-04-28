@@ -4,10 +4,11 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.where(user: current_user)
     @important_tasks = Task.where(important: true)
+
+    @task = Task.new
   end
 
   def new
-    @task = Task.new
   end
 
   def create
