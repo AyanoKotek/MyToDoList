@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row justify-content-between">
+  <div class="row justify-content-between" data-controller="checkbox">
     <div class="col-2 my-4">
-      <%= link_to "Add task", new_task_path, class:"btn btn-success btn-size"%>
+        <%= render 'shared/form', task: @task %>
     </div>
     <div class="bkg-beige col-4 p-0 my-4">
       <div class="list-title-card">
