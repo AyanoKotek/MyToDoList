@@ -9,7 +9,7 @@
       </div>
       <% @tasks.each do |task| %>
         <div class="task-card d-flex justify-content-between px-2">
-          <i class="fa-regular fa-square checkbox"></i>
+          <i class="fa-regular fa-square checkbox" data-checkbox-target="box" data-action="click->checkbox#check"></i>
           <%# icon for checked is below %>
           <%# <i class="fa-regular fa-square-check"></i> %>
           <div class="task-card-info flex-grow-1">
