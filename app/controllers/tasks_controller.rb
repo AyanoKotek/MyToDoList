@@ -8,9 +8,6 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def new
-  end
-
   def create
     @task = Task.new(task_params)
     @task.user = current_user

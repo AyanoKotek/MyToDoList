@@ -1,11 +1,7 @@
 <div class="container">
-  <div class="row justify-content-between" data-controller="checkbox">
+  <div class="row justify-content-between">
     <div class="col-2 my-4">
-        <%= simple_form_for(@task,
-        data: {
-          checkbox_target: "form",
-          action: "submit->checkbox#send"
-        }) do |f| %>
+        <%= simple_form_for(@task) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :important %>
@@ -16,37 +12,13 @@
       <div class="list-title-card">
         <h2>All the tasks</h2>
       </div>
-      <% @tasks.each do |task| %>
-        <div class="task-card d-flex justify-content-between px-2">
-          <i class="fa-regular fa-square checkbox" data-checkbox-target="box" data-action="click->checkbox#check"></i>
-          <%# icon for checked is below %>
-          <%# <i class="fa-regular fa-square-check"></i> %>
-          <div class="task-card-info flex-grow-1">
-            <h3 class="list-title-font"><%= task.title %></h3>
-            <p class="task-description"><%= task.description %></p>
-          </div>
-          <div class="date-dots d-flex flex-column align-items-center">
-            <small class="flex-grow-1"><%= task.created_at.strftime("%b %y") %></small>
-            <div class="dots">
-              <i class="fa-solid fa-ellipsis-vertical flex-grow-1"></i>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render "shared/task_list", tasks: @tasks %>
     </div>
     <div class="bkg-beige col-4 p-0 my-4">
       <div class="list-title-card">
         <h2>Important tasks</h2>
       </div>
-      <% @important_tasks.each do |task| %>
-        <div class="task-card">
-          <h3 class="list-title-font"><%= task.title %></h3>
-          <p class="task-description"><%= task.description %></p>
-          <%= link_to "Edit", edit_task_path(task), class:"btn btn-primary btn-size" %>
-            <%# the link has to be url, not path %>
-            <%= link_to "Delete", "tasks/#{task.id}", data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"}, class:"btn btn-success btn-size" %>
-        </div>
-      <% end %>
+      <%= render "shared/task_list", tasks: @important_tasks %>
     </div>
   </div>
 

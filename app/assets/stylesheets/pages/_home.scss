@@ -12,13 +12,13 @@
 }
 .list-title-font {
   // font-family: 'Inter', sans-serif;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 1.4rem;
 }
 
 .task-card {
-  margin: .6rem auto;
-  border-bottom: 1px solid #BBB;
+  margin: 0.6rem auto;
+  border-bottom: 1px solid #bbb;
   padding-bottom: 0.3rem;
   .task-card-info {
     margin-left: 1rem;
@@ -31,7 +31,7 @@
     font-size: 1.2rem;
   }
   .date-dots {
-  width: 15%;
+    width: 15%;
   }
 
   .dots {
@@ -40,11 +40,11 @@
     text-align: center;
   }
   .dots:hover {
-    background-color: rgba($color: #f0e1e1, $alpha: 1.0);
+    background-color: rgba($color: #f0e1e1, $alpha: 1);
     border-radius: 50%;
   }
 
-  .checkbox {
+  .checkbox-size {
     font-size: 1.4rem;
   }
 }

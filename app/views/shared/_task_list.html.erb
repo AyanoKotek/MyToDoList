@@ -1,0 +1,15 @@
+<% tasks.each do |task| %>
+  <div class="task-card d-flex justify-content-between px-2">
+    <input type = "checkbox" <% if task.completed %> checked <% end %>>
+    <div class="task-card-info flex-grow-1">
+      <h3 class="list-title-font"><%= task.title %></h3>
+      <p class="task-description"><%= task.description %></p>
+    </div>
+    <div class="date-dots d-flex flex-column align-items-center">
+      <small class="flex-grow-1"><%= task.created_at.strftime("%A, %b %d") %></small>
+      <div class="dots">
+        <i class="fa-solid fa-ellipsis-vertical flex-grow-1"></i>
+      </div>
+    </div>
+  </div>
+<% end %>
