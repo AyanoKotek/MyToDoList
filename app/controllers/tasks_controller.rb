@@ -34,6 +34,13 @@ class TasksController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def destroy_done
+    @tasks = Task.where(completed: true)
+    raise
+    @tasks.destroy
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def set_task

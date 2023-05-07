@@ -11,6 +11,7 @@
     <div class="bkg-beige col-4 p-0 my-4">
       <div class="list-title-card">
         <h2>All the tasks</h2>
+        <%= link_to "Delete the completed tasks", destroy_done_tasks_path %>
       </div>
       <%= render "shared/task_list", tasks: @tasks %>
     </div>
