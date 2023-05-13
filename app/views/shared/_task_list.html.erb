@@ -1,6 +1,6 @@
 <% tasks.each do |task| %>
-  <div class="task-card d-flex justify-content-between px-2">
-    <input type = "checkbox" <% if task.completed %> checked <% end %>>
+  <div class="task-card d-flex justify-content-between px-2" data-controller="checkbox">
+    <input type = "checkbox" data-checkbox-target="checkbox" <% if task.completed %> checked <% end %> data-action="checkbox#toggle">
     <div class="task-card-info flex-grow-1">
       <h3 class="list-title-font"><%= task.title %></h3>
       <p class="task-description"><%= task.description %></p>
