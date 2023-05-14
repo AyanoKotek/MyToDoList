@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:update, :edit, :destroy]
 
   def index
-    @tasks = Task.where(user: current_user)
+    @tasks = Task.where(user: current_user, completed: false)
     @important_tasks = Task.where(important: true)
 
     @task = Task.new
@@ -18,15 +18,20 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
+  def update
+    respond_to do |format|
+      if @task.update(task_params)
+        format.html { redirect_to root_path }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
+    end
   end
 
-  def update
-    if @task.update(task_params)
-      redirect_to root_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+  def edit
+
   end
 
   def destroy
@@ -48,6 +53,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :important)
+    params.require(:task).permit(:title, :description, :important, :completed)
   end
 end

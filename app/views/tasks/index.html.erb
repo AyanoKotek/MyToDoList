@@ -1,21 +1,21 @@
 <div class="container">
   <div class="row justify-content-between">
-    <div class="col-2 my-4">
+    <div class="col-12 col-lg-2 my-4">
         <%= simple_form_for(@task) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :important %>
         <%= f.submit %>
-<% end %>
+        <% end %>
     </div>
-    <div class="bkg-beige col-4 p-0 my-4">
+    <div class="bkg-beige col-12 col-lg-4 p-0 my-4">
       <div class="list-title-card">
         <h2>All the tasks</h2>
         <%= link_to "Delete the completed tasks", destroy_done_tasks_path %>
       </div>
       <%= render "shared/task_list", tasks: @tasks %>
     </div>
-    <div class="bkg-beige col-4 p-0 my-4">
+    <div class="bkg-beige col-12 col-lg-4 p-0 my-4">
       <div class="list-title-card">
         <h2>Important tasks</h2>
       </div>
