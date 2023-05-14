@@ -2,9 +2,9 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:update, :edit, :destroy]
 
   def index
-    @tasks = Task.where(user: current_user, completed: false)
-    @important_tasks = Task.where(important: true)
-
+    @tasks = Task.where(user: current_user, completed: false, important: false)
+    @important_tasks = Task.where(important: true, completed: false)
+    @completed_tasks = Task.where(completed: true)
     @task = Task.new
   end
 

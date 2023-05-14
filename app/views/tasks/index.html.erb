@@ -7,6 +7,10 @@
         <%= f.input :important %>
         <%= f.submit %>
         <% end %>
+
+      <div class="completed-tasks">
+        <%= render "shared/completed_task_list", tasks: @completed_tasks %>
+      </div>
     </div>
     <div class="bkg-beige col-12 col-lg-4 p-0 my-4">
       <div class="list-title-card">

@@ -7,6 +7,7 @@
     <div class="d-flex align-items-center done-checkbox">
       <%= simple_form_for(task) do |f| %>
         <%= f.input :completed, input_html: { class: 'class名' } %>
+        <%= f.input :important %>
         <%= f.submit %>
       <% end %>
     </div>

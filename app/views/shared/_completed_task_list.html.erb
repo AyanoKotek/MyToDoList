@@ -1,0 +1,13 @@
+<% tasks.each do |task| %>
+  <div class="task-card d-flex justify-content-between px-2" data-controller="checkbox" data-checkbox-update-url="<%= task_path(task)%>">
+  </div>
+  <div class="completed-task-info">
+    <h3 class="list-title-font"><%= task.title %></h3>
+  </div>
+  <div class="d-flex align-items-center done-checkbox">
+    <%= simple_form_for(task) do |f| %>
+      <%= f.input :completed, input_html: { class: 'class名' } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+<% end %>
