@@ -1,16 +1,14 @@
 <div class="container">
   <div class="row justify-content-between">
     <div class="col-12 col-lg-2 my-4">
-        <%= simple_form_for(@task) do |f| %>
+      <%= simple_form_for(@task) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :important %>
         <%= f.submit %>
-        <% end %>
+      <% end %>
 
-      <div class="completed-tasks">
-        <%= render "shared/completed_task_list", tasks: @completed_tasks %>
-      </div>
+      <%= render "shared/completed_task_list", tasks: @completed_tasks %>
     </div>
     <div class="bkg-beige col-12 col-lg-4 p-0 my-4">
       <div class="list-title-card">
