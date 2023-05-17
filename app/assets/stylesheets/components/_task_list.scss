@@ -1,0 +1,22 @@
+.completed-tasks {
+  background-color: rgba($color: #f0e1e1, $alpha: 0.4);
+
+  .completed-list-title {
+    font-size: 1rem;
+  }
+
+  .title-completed {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .completed-title {
+    line-height: 30px;
+    margin-bottom: 0;
+    align-self: center;
+    color: $green;
+    font-size: 1.3rem;
+  }
+}
