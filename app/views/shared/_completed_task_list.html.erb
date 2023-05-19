@@ -1,10 +1,10 @@
-<div class="completed-tasks">
+<div class="completed-tasks p-3 my-3">
   <div class="title-completed text-center">
-    <h4 class="completed-title"><i class="fa-regular fa-circle-check "></i>Completed</h3>
+    <h4 class="completed-title"><i class="fa-regular fa-circle-check "></i></h3>
   </div>
 
   <% tasks.each do |task| %>
-    <div class="d-flex justify-content-between px-2" data-controller="checkbox" data-checkbox-update-url="<%= task_path(task)%>">
+    <div class="d-flex justify-content-between">
     </div>
     <div class="completed-task-info">
       <p class="completed-list-title"><%= task.title %></p>

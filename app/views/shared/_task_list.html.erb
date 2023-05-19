@@ -1,5 +1,5 @@
 <% tasks.each do |task| %>
-  <div class="task-card d-flex justify-content-between px-2" data-controller="checkbox" data-checkbox-update-url="<%= task_path(task)%>">
+  <div class="task-card d-flex justify-content-between pt-2 pb-3" data-controller="checkbox" data-checkbox-update-url="<%= task_path(task)%>">
     <div class="task-card-info flex-grow-1">
       <h3 class="list-title-font"><%= task.title %></h3>
       <p class="task-description"><%= task.description %></p>
